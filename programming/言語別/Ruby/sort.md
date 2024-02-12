@@ -114,7 +114,7 @@ sort_by ならどちらのやり方でも大差ないと思う。
 - 比較的単純なソートや、特定のカスタム比較ロジックを実装したい場合に適しています。
 
 ```ruby
-rubyCopy code
+
 array = [5, 3, 8, 2]
 sorted_array = array.sort  # => [2, 3, 5, 8]
 
@@ -123,7 +123,7 @@ sorted_array = array.sort  # => [2, 3, 5, 8]
 カスタムソートロジックの例：
 
 ```ruby
-rubyCopy code
+
 sorted_array = array.sort { |a, b| a <=> b }  # 昇順
 sorted_array = array.sort { |a, b| b <=> a }  # 降順
 
@@ -136,7 +136,7 @@ sorted_array = array.sort { |a, b| b <=> a }  # 降順
 - 大きなオブジェクトや複雑なソート基準を持つ場合、**`sort`**よりも**`sort_by`**の方が効率的な場合があります。これは**`sort_by`**がSchwartzian Transformを使用しているためです。
 
 ```ruby
-rubyCopy code
+
 people = [{name: "Alice", age: 30}, {name: "Bob", age: 25}]
 sorted_people = people.sort_by { |person| person[:age] }  # => 年齢に基づいてソート
 

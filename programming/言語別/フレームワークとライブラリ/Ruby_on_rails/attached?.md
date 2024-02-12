@@ -7,7 +7,7 @@ Ruby on RailsのActive Storageでは、アプリケーションのモデルに�
 例えば、**`User`** モデルがあるとして、ユーザーのプロフィール画像を添付する場合は、モデルに以下のように記述します：
 
 ```ruby
-rubyCopy code
+
 class User < ApplicationRecord
   has_one_attached :profile_picture
 end
@@ -17,7 +17,7 @@ end
 この場合、特定の **`User`** インスタンスにプロフィール画像が添付されているかどうかをチェックするには、**`attached?`** メソッドを使用します：
 
 ```ruby
-rubyCopy code
+
 user = User.find(params[:id])
 
 if user.profile_picture.attached?
@@ -33,7 +33,7 @@ end
 また、セーフナビゲーション演算子 **`&.`** を使用すると、メソッドを呼び出す前にオブジェクトが **`nil`** でないことを確認できます。これにより、もし **`user`** インスタンスが **`nil`** であったり、**`profile_picture`** が未定義であったりしてもエラーが発生せず、単に **`nil`** を返すだけになります。例えば：
 
 ```ruby
-rubyCopy code
+
 # セーフナビゲーション演算子を使って `attached?` メソッドを呼び出す
 if user&.profile_picture&.attached?
   # プロフィール画像が添付されている場合の処理

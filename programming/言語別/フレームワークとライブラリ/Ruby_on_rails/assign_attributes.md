@@ -9,7 +9,7 @@
 まず、更新したいユーザーのデータをデータベースから取得します。
 
 ```ruby
-rubyCopy code
+
 user = User.find(1) # IDが1のユーザーを取得
 
 ```
@@ -17,7 +17,7 @@ user = User.find(1) # IDが1のユーザーを取得
 次に、**`assign_attributes`**メソッドを使って、名前とメールアドレスを新しい値に更新します。
 
 ```ruby
-rubyCopy code
+
 user.assign_attributes(name: "新しい名前", email: "new@example.com")
 
 ```
@@ -25,7 +25,7 @@ user.assign_attributes(name: "新しい名前", email: "new@example.com")
 この時点で、**`user`**オブジェクトの**`name`**と**`email`**属性は新しい値に更新されていますが、この変更はまだデータベースには反映されていません。変更をデータベースに保存するには、**`save`**メソッドを呼び出します。
 
 ```ruby
-rubyCopy code
+
 user.save
 
 ```

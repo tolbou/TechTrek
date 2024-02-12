@@ -7,7 +7,7 @@
 **`find_each`** メソッドは、モデルのクラスメソッドとして提供されています。例えば、Userモデルの全ユーザーを処理するには、以下のように書きます。
 
 ```ruby
-rubyCopy code
+
 User.find_each do |user|
   # ここで各ユーザーに対する処理を行う
 end
@@ -23,7 +23,7 @@ end
 例えば、バッチサイズを500に設定するには、以下のようにします。
 
 ```ruby
-rubyCopy code
+
 User.find_each(batch_size: 500) do |user|
   # 処理
 end

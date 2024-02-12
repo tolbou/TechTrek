@@ -65,7 +65,7 @@ t("activerecord.attributes.task.created_at")
 **`human_attribute_name`** メソッドは、以下のようにして使用します。
 
 ```ruby
-rubyCopy code
+
 ModelName.human_attribute_name('attribute_name')
 
 ```
@@ -93,7 +93,7 @@ ja:
 例えば、Userモデルがあり、その**`email`**属性に対して人間が読みやすい名前を表示したい場合は、以下のようになります。
 
 ```ruby
-rubyCopy code
+
 User.human_attribute_name('email') # => "Email" or "メールアドレス"（ロケールに依存）
 
 ```

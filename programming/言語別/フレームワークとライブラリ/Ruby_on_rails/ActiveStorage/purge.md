@@ -10,7 +10,7 @@ Ruby on RailsのActive Storageで**`purge`**メソッドを使用すると、ア
 ### **使用例**
 
 ```ruby
-rubyCopy code
+
 image = ActiveStorage::Attachment.find(params[:id])
 image.purge
 

@@ -7,7 +7,7 @@ CronはUNIX系オペレーティングシステムで広く使用されている
 Cronの設定は、特定の分、時、日、月、曜日を指定する5つのフィールドで構成されます。例えば、毎日午前3時にスクリプトを実行するには、以下のようなCron設定を使用します：
 
 ```jsx
-javascriptCopy code
+
 0 3 * * * /path/to/script.sh
 
 ```
@@ -21,7 +21,7 @@ Wheneverは内部でCronの構文に変換されるため、Cronがインスト�
 例えば、毎日午前3時にRailsタスクを実行するWheneverの設定は、以下のようになります：
 
 ```ruby
-rubyCopy code
+
 every :day, at: '3:00 am' do
   rake "my_task:run"
 end

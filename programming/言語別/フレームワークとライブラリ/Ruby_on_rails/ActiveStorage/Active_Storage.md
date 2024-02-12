@@ -16,7 +16,7 @@ Active Storageを使用するには、まずRailsアプリケーションにActi
 モデルでファイルアップロードを扱いたい場合は、そのモデルに**`has_one_attached`**や**`has_many_attached`**マクロを使用してアタッチメントを定義します。これにより、そのモデルのインスタンスに対してファイルを添付したり、添付ファイルにアクセスしたりすることができるようになります。
 
 ```ruby
-rubyCopy code
+
 class User < ApplicationRecord
   has_one_attached :avatar
 end

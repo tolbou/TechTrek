@@ -19,7 +19,7 @@ Railsのルーティングシステムでは、**`resources`** メソッドを�
 **`resources`** で生成されたこれらのルート以外に、例えば **`search`** のようなカスタムルートを追加する場合は、**`as`** オプションを使って名前付きヘルパーを定義する必要があります。これにより、ビューやコントローラー内でパスを簡単に参照できるようになります。
 
 ```ruby
-rubyCopy code
+
 get 'search', to: 'posts#search', as: :search_posts
 
 ```

@@ -13,7 +13,7 @@
 2. **マイグレーションファイルの編集**: 生成されたマイグレーションファイルを開き、必要な変更（この場合はユニークインデックスの追加）を記述します。例えば以下のようになります。
     
     ```ruby
-    rubyCopy code
+    
     class AddUniqueIndexToPostTags < ActiveRecord::Migration[6.1]
       def change
         add_index :post_tags, [:post_id, :tag_id], unique: true

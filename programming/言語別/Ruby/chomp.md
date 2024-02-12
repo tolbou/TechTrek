@@ -5,7 +5,7 @@ Rubyの **`.chomp`** メソッドは、主に文字列の末尾にある改行�
 **基本的な使い方**
 
 ```ruby
-rubyCopy code
+
 input = "Hello, world!\n"
 puts input.chomp  # "Hello, world!"
 

@@ -7,7 +7,7 @@
 例えば、**`ApplicationController`** で **`@q`** オブジェクトを初期化するには次のようにします。
 
 ```ruby
-rubyCopy code
+
 class ApplicationController < ActionController::Base
   before_action :initialize_search
 
