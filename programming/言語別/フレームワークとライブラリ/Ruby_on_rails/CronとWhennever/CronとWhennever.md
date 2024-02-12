@@ -37,3 +37,24 @@ Wheneverは、このような設定をCronの形式に変換し、システム�
 - Wheneverは、スケジュールの管理を簡単にするためのツールですが、実際にジョブを実行するのはCronです。したがって、Wheneverを使用するシステムにはCronがインストールされている必要があります。
 
 Wheneverは、Cronジョブの管理をより簡単かつ効率的にするための強力なツールです。Rubyの構文を使用して直感的にジョブをスケジュールできるため、RubyまたはRailsのプロジェクトでCronジョブを使用する場合に特に便利です。
+
+
+whemeverのコマンド解説
+wheneverでは次の4つをスケジューリングできます。
+
+
+command: bashコマンド実行
+rake: rakeタスク実行
+runner: Rails内のメソッド実行
+script: scriptの実行
+crontabを実行
+crontabを使ってcronに対して命令をします。
+
+
+$ bundle exec whenever --update-crontab   # wheneverの設定更新
+
+$ bundle exec whenever  # 設定内容にエラーが無いか確認
+
+$ crontab -l  # 設定されているcronを確認
+
+$ bundle exec whenever --clear-crontab  # crontabの設定を削除
