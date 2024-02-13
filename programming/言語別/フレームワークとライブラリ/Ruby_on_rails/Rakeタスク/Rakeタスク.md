@@ -1,10 +1,10 @@
-# **【Rails 】Rakeタスクとは**
+# 【Rails 】Rakeタスクとは
 
 - [Rakeタスク](https://qiita.com/tags/rake%e3%82%bf%e3%82%b9%e3%82%af)
 
 最終更新日 2022年2月17日 17:29投稿日 2022年02月17日
 
-## **Rakeタスクとは**
+## Rakeタスクとは
 
 `Rake`とは、`Ruby`で書かれたコードを`タスク`として作成しておき必要に応じて呼び出し実行する事が出来る機能。
 
@@ -24,7 +24,7 @@
 
 ▷[【Rails】wheneverでcronを設定](https://qiita.com/mmaumtjgj/items/19e866f31541abb6c614)
 
-## **Rakeタスクの作り方**
+## Rakeタスクの作り方
 
 `Hello`と簡単な挨拶を表示するタスクを作成。
 

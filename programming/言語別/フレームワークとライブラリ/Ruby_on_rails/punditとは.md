@@ -1,4 +1,4 @@
-## **Punditとは**
+## Punditとは
 
 PunditとはRubyのgemであり､｢認可｣の仕組みを提供するものです｡
 
@@ -8,11 +8,11 @@ Punditはcurrent_user(ログイン中のユーザー)メソッドを扱うので
 
 似ているgemで`cancancan`がありますが､ちょっと違います｡
 
-# **認証と認可とは**
+# 認証と認可とは
 
 認証と認可は似ているようで全く別の概念です｡
 
-## **認証 Authentication**
+## 認証 Authentication
 
 通信の相手が誰(何)であるかを確認することが｢認証｣
 
@@ -26,7 +26,7 @@ Punditはcurrent_user(ログイン中のユーザー)メソッドを扱うので
 
 つまり､相手が誰なのか確認する｡それだけです｡
 
-## **認可 Authorization**
+## 認可 Authorization
 
 とある特定の条件に対して､リソースアクセスの権限をあたえることが｢認可｣
 
@@ -46,13 +46,13 @@ Punditはcurrent_user(ログイン中のユーザー)メソッドを扱うので
 
 ただ多くの場合､認証できないと認可できないので､認可は認証に依存していると言えます｡
 
-# **認可の仕組み**
+# 認可の仕組み
 
-`Pundit`はコントローラの各アクションで`authorize` リソースオブジェクトを呼ぶと､**対象のリソースに対して権限があるかどうかを確認してくれます｡**その設定を`app/policies`にあるポリシーファイルで細かく定義できます｡
+`Pundit`はコントローラの各アクションで`authorize` リソースオブジェクトを呼ぶと､対象のリソースに対して権限があるかどうかを確認してくれます｡その設定を`app/policies`にあるポリシーファイルで細かく定義できます｡
 
-# **導入方法&使用例**
+# 導入方法&使用例
 
-## **インストール**
+## インストール
 
 `gem "pundit"`
 
@@ -66,7 +66,7 @@ Punditはcurrent_user(ログイン中のユーザー)メソッドを扱うので
 
 !https://static.zenn.studio/images/wrap-icon.svg
 
-## **Punditをinclude**
+## Punditをinclude
 
 使いたいコントローラでPunditをincludeします｡
 
@@ -78,7 +78,7 @@ end`
 
 !https://static.zenn.studio/images/wrap-icon.svg
 
-## **認可のルールを記述するファイルを作成**
+## 認可のルールを記述するファイルを作成
 
 generatorで作成します｡
 
@@ -116,9 +116,9 @@ end`
 
 第二引数の`record`は認可をチェックしたいモデルオブジェクトです。対応するモデルのインスタンスを手動で割り当てます｡
 
-これを利用することで､**アクセスしているユーザーオブジェクトと､対象のリソースオブジェクトを知ることができます｡**
+これを利用することで､アクセスしているユーザーオブジェクトと､対象のリソースオブジェクトを知ることができます｡
 
-## **認可ファイルを作成してみる**
+## 認可ファイルを作成してみる
 
 例としてPostという名前のモデルに対してpolicyを作成してみます｡
 
@@ -140,13 +140,13 @@ end`
 - `モデル名_policy.rb`でファイル作成
 - `モデル名Policy`でクラス名定義
 - `def アクション名?`で認可ルール(policy)を記述
-- `*def アクション名?`の返り値によって､認可するか否かを判断しています｡**
+- `*def アクション名?`の返り値によって､認可するか否かを判断しています｡
 
 例えば､上記の`def create?`で`false`が返ってくれば､
 
-**PostControllerの**`create`**アクションは拒否されて､`Pundit::NotAuthorizedError`が発生します｡**
+PostControllerの`create`アクションは拒否されて､`Pundit::NotAuthorizedError`が発生します｡
 
-## **コントローラ側からPundit呼び出し**
+## コントローラ側からPundit呼び出し
 
 先程のpolicyファイルを適用するために､コントローラからPunditを呼び出します｡
 
@@ -168,9 +168,9 @@ end`
 - 引数にはモデル(リソース)オブジェクトを入れます｡
 - インスタンスかモデルか認可状況を確認します｡
 
-# **Pundit用静的403エラー画面の作成**
+# Pundit用静的403エラー画面の作成
 
-## **`Pundit::NotAuthorizedError`を捕捉してエラーページを表示させる**
+## `Pundit::NotAuthorizedError`を捕捉してエラーページを表示させる
 
 各認可がfalseだった場合､`authorize`が`Pundit::NotAuthorizedError`を`raise`するので、エラーを拾って403を返す仕組みを作っておく必要があります｡
 
@@ -183,7 +183,7 @@ end`
 
 また､上記のエラー画面は､本番環境では表示されますが､開発環境ではデフォルトで非表示となっています｡正しく表示されるか開発環境で確認する方法も後で記述します｡
 
-## **エラー画面のテンプレートを作成**
+## エラー画面のテンプレートを作成
 
 まずはエラー画面の`public/403.html`を作成しておきます｡
 
@@ -193,7 +193,7 @@ end`
 
 !https://static.zenn.studio/images/wrap-icon.svg
 
-## **本番環境でユーザー向けの403エラー画面を表示させる設定**
+## 本番環境でユーザー向けの403エラー画面を表示させる設定
 
 Production環境でユーザー向けの403エラー画面を表示させるには下記の通り､`config/application.rb`に設定を記述して､サーバを再起動させます｡
 
@@ -209,7 +209,7 @@ config.action_dispatch.rescue_responses["Pundit::NotAuthorizedError"] = :forbidd
 
 `Pundit::NotAuthorizedError`を補足させ､`:forbidden`を指定することで､HTTPステータスコードが`403`になります｡このシンボルはで定義されています｡
 
-## **開発環境で403エラー画面を確認する**
+## 開発環境で403エラー画面を確認する
 
 上記の設定で`Pundit::NotAuthorizedError`が発生した場合､本番環境では､`public/403.html`が表示されるようになりました｡これを開発環境で確認するには､`config/environments/development.rb`の `config.consider_all_requests_local`を`false`にして､サーバを再起動することで可能となります｡
 
@@ -231,7 +231,7 @@ config/environments/development.rb
 
 以上｡
 
-## **※ 共通レイアウトも表示させる場合**
+## ※ 共通レイアウトも表示させる場合
 
 共通レイアウトも表示させる場合は､ApplicationControllerで`rescue`処理を記載して､`app/view`以下のテンプレートファイルを用意して`render`させます｡
 
@@ -251,6 +251,6 @@ end`
 
 !https://static.zenn.studio/images/wrap-icon.svg
 
-# **参考**
+# 参考
 
 https://github.com/varvet/pundit)
